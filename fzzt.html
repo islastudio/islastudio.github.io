@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>福洲语言翻译器</title>
+<style>
+@import url("福洲整体美化.css");
+@import url("福洲整体美化间隔符.css");
+</style>
+
+</head>
+<body>
+<script>
+alert("因为textarea代码(用来扩大输入框)不能有id属性，所以输入框的大小改变不了，请谅解")
+</script>
+<p1>汉语转福洲语</p1>
+<input type="text" placeholder="请输入汉语" id="yhsr"></input>
+<button type="button" onclick="yhsrhs();">翻译</button>
+<jgf>-----------------------------------</jgf>
+<script>
+    let yhsrhs = function(){
+        let val = document.getElementById("yhsr").value;
+        var a=Math.floor(Math.random()*50)
+        var d=Math.floor(Math.random()*50)
+        var xb1=Math.floor(Math.random()*50)
+        
+
+    function repeatString(str,n) {
+	    return new Array(n+1).join(str);
+    }
+    b=repeatString("啊西八",a)
+    c=repeatString("啊",d)
+    xb2=repeatString("西别",xb1)
+    alert(b+xb2+c)
+        
+  }
+</script>
+<p1>福洲语转汉语(目前词量为20)</p1>
+<input type="texe" placeholder="请输入福洲语" id="fzy"></input>
+<button type="button" onclick="yhsrhs2();">翻译</button>
+<jgf>------------------------------------</jgf>
+<script>
+
+let yhsrhs2 = function(){
+    var sj=Math.floor(Math.random()*21)
+    if (sj==1){
+      confirm("曹尼玛")
+      }
+    if (sj==2){
+      confirm("靠！")
+      }
+    if (sj==3){
+      confirm("牛逼")
+      }
+    if (sj==4){
+      confirm("滚")
+      }
+    if (sj==5){
+      confirm("46祸")
+      }
+    if (sj==6){
+      confirm("SB")
+      }
+    if (sj==7){
+      confirm("关我什么事")
+      }
+    if (sj==8){
+      confirm("呵呵")
+      }
+    if (sj==9){
+      confirm("不要啊")
+      }
+    if (sj==10){
+      confirm("给老子跪下")
+      }
+    if (sj==11){
+      confirm("你好")
+      }
+    if (sj==12){
+      confirm("打劫")
+      }
+    if (sj==13){
+      confirm("靓仔")
+      }
+    if (sj==14){
+      confirm("吊毛")
+      }
+    if (sj==15){
+      confirm("你完了")
+      }
+    if (sj==16){
+      confirm("这没涨的")
+      }
+    if (sj==17){
+      confirm("我太帅了")
+      }
+    if (sj==18){
+      confirm("感谢")
+      }
+    if (sj==19){
+      confirm("你个老八")
+      }
+    if (sj==20){
+      confirm("就是他")
+      }
+    } 
+
+</script>
+
+<p1>日期转福洲语</p1>
+<input type="date"></input>
+<button type="button" onclick="yhsrhs();">翻译</button>
+<jgf>---------------------------------------</jgf>
+
+<p1>数值翻译<p1>
+<input type="number" name="number1"></input>
+<button type="button" onclick="yhsrhs();">翻译</button>
+<jgf>---------------------------------------</jgf>
+
+<p1>密码翻译<p1>
+<input type="password"></input>
+<button type="button" onclick="yhsrhs();">翻译</button>
+<jgf>---------------------------------------</jgf>
+
+<p1>滚条数值翻译<p1>
+<input type="range" id="rangepd"></input>
+<button type="button" onclick="range();">查看当前数值</button>
+<button type="button" onclick="yhsrhs();">翻译</button>
+<script>
+let range = function (){
+		let val = document.getElementById("rangepd").value;
+		alert(val);
+}
+</script>
+<jgf>------------------</jgf>
+
+<a href="彩蛋.html">彩蛋</a>
+
+  </body>
+  </html>
