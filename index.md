@@ -1,4 +1,4 @@
-## <mark style="background-color:green">欢迎访问La工作室官方网站</mark>
+## <font size=15>欢迎访问La工作室官方网站</font>
 
 本网页正在内测，没有正式公布
 
