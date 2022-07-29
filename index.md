@@ -23,6 +23,8 @@
 
 -素材室  laowang
 
+-我徒弟 linxin
+
 ## 工作室壮举
 
 [福洲语言翻译器](fzzt.html)
