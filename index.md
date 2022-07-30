@@ -28,3 +28,4 @@
 ## 工作室壮举
 
 [福洲语言翻译器](fzzt.html)
+[啊佬传奇](islastudiosp.html)
