@@ -17,15 +17,15 @@
 ## 工作室人员
 -室长   liuao
 
--剪辑师  liupeng
+-剪辑师  liupeng QQ:653306447
 
--财务长  liuaiweng
+-财务长  liuaiweng QQ:692885621
 
--图片处理 laizisheng
+-图片处理 laizisheng QQ:2350561146
 
--素材室  laowang
+-素材室  laowang QQ:2677345886
 
--我徒弟 linxin
+-我徒弟 linxin QQ:911782592
 
 ## 工作室壮举
 
