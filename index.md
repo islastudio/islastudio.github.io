@@ -31,3 +31,4 @@
 
 [福洲语言翻译器](fzzt.html)
 [啊佬传奇](islastudiosp.html)
+[计算器](la高级计算器.cs)
