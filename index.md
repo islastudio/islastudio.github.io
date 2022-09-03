@@ -31,4 +31,4 @@
 
 [福洲语言翻译器](fzzt.html)
 [啊佬传奇](islastudiosp.html)
-[每日一听](zhapian.html)
+[每日一听](https://vdse.bdstatic.com//192d9a98d782d9c74c96f09db9378d93.mp4)
