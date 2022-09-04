@@ -29,6 +29,6 @@
 
 ## 工作室壮举
 
-[福洲语言翻译器](fzzt.html)
+[福洲语言翻译器](fuzhoyuyanfanyiqi.html)
 [啊佬传奇](islastudiosp.html)
 [每日一看](yddlianjie.html)
