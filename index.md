@@ -11,7 +11,7 @@
 感谢支持
 ## 工作室合作伙伴
 [祁隆abls工作室(http://abls-studio-yes.mysxl.cn/)](http://abls-studio-yes.mysxl.cn/)
-[引力公司(hxxps1354.mysxl.cn)](hxxps1354.mysxl.cn)
+[引力公司(hxxps1354.mysxl.cn)](https://hxxps1354.mysxl.cn)
 
 ## 工作室人员
 -室长   liuao
