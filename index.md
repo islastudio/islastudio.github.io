@@ -31,5 +31,5 @@
 
 [福洲语言翻译器](FuZhoYuYanFanYiQi/fuzhoyuyanfanyiqi.html)
 [啊佬传奇](islastudiosp.html)
-[每日一看](yddlianjie.html)
+[高级网址ikun网址](GaoJiWangZhi/gaojiwangzhimimashurujiemian.html)
 [古坤文明](https://www.bilibili.com/video/BV1Dt4y1L7zw?spm_id_from=333.999.0.0&vd_source=f7e9f30d92d28fa8cb9b5ccb93c6c27e)
