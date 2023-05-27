@@ -35,6 +35,7 @@
 -我徒弟 linxin QQ:911782592
 
 ## 工作室壮举
+ps:密码全为la666
 
 
 [福洲语言翻译器](FuZhoYuYanFanYiQi/fuzhoyuyanfanyiqi.html)
