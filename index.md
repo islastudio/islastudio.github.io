@@ -37,8 +37,6 @@
 ## 工作室壮举
 ps:密码全为la666
 
-<a href="https://islastudio.github.io/FuZhoYuYanFanYiQi/fuzhoyuyanfanyiqi.html" style="color:#fbffff;text-decoration:none;">福州语言翻译器-自定义样式测试</a>
-
 [福洲语言翻译器](FuZhoYuYanFanYiQi/fuzhoyuyanfanyiqi.html)
 
 [啊佬传奇](ALaoChuanQi/alaochuanqi.html)
@@ -52,6 +50,8 @@ ps:密码全为la666
 [搜猪浏览器](https://liuaozhengshuai.lanzoul.com/iCr2z0jytgji)
 
 [la高级计算器](https://liuaozhengshuai.lanzoul.com/ilaMj07t2ked)
+
+[闲人免进-Markdown与html混合样式测试](https://islastudio.github.io/DaiMaCeShi/htmlCeShi)
 
 ![Alt text](lagzs2.jpg "la-logo")
 
