@@ -51,7 +51,5 @@ ps:密码全为la666
 
 [la高级计算器](https://liuaozhengshuai.lanzoul.com/ilaMj07t2ked)
 
-[闲人免进-Markdown与html混合样式测试](https://islastudio.github.io/DaiMaCeShi/htmlCeShi)
-
 ![Alt text](lagzs2.jpg "la-logo")
 
