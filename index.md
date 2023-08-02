@@ -51,5 +51,8 @@ ps:密码全为la666
 
 [la高级计算器](https://liuaozhengshuai.lanzoul.com/ilaMj07t2ked)
 
+## 工作区域
+[linux软件包](https://liuaozhengshuai.lanzoul.com/b03kjkkbe)
+
 ![Alt text](lagzs2.jpg "la-logo")
 
