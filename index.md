@@ -54,5 +54,7 @@ ps:密码全为la666
 ## 工作区域
 [linux软件包](https://islastudio.github.io/Kali/RuanJianBao.html)
 
+[code传输](https://islastudio.github.io/Kali/DaiMaChuanShu.html)
+
 ![Alt text](lagzs2.jpg "la-logo")
 
