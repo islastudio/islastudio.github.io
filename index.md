@@ -56,5 +56,7 @@ ps:密码全为la666
 
 [code传输](https://islastudio.github.io/Kali/DaiMaChuanShu.html)
 
+[网链直达](https://flowus.cn/share/310adb89-7707-4f71-8fdc-7369579de123)
+
 ![Alt text](lagzs2.jpg "la-logo")
 
