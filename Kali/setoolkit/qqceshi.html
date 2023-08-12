@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+
+
+<html lang="zh-cn">
+
+<head>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1" />
+
+	<!-- @fragment_top Start-->
+
+<meta charset="UTF-8">
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<title>QQ帐号安全登录</title>
+
+<meta name="keywords" content="QQ互联、QQ登录、安全登录、网站接入、腾讯开放平台">
+
+<meta name="description" content="接入QQ互联，可实现与腾讯各项服务的无缝连接，安全帐号登录体系，用户动态同步腾讯各社交平台，调用腾讯公司各业务服务。">
+
+<meta name="copyright" content="Tencent" >
+
+<meta name="author" content="rtx://tencent/sng/yuanyan" >
+
+<link rel="Shortcut Icon" href="https://imgcache.qq.com/qzone/openapi/favicon.ico?t=20130219" type="image/x-icon">
+
+<link rel="icon" href="https://imgcache.qq.com/qzone/openapi/favicon.ico?t=20130219" type="image/x-icon">
+
+<link href="https://imgcache.qq.com/open/connect/widget/pc/login/qlogin_v2.min.css?max_age=2592000&v=20210112" rel="stylesheet">
+
+<script type="text/javascript">
+
+    window.__start = +new Date();
+
+    
+
+    var _speedTiming = [+new Date];
+
+    (function error(monitorId){
+
+        window.onerror = function(errorMsg, url, lineNumber) {
+
+          var img = document.createElement('img');
+
+          var url = 'https://graph.qq.com/oauth2.0/report?';
+
+          var data = {
+
+            attr_id: 2775276,
+
+            uls: 'Script Error: ' + errorMsg + ', line:' + lineNumber + ', url:' + location.href + ' referer:' + document.referrer,
+
+            content_type: 0,
+
+            client_id: Q.getParameter('client_id')
+
+          }
+
+          for(var key in data){
+
+            if(url[url.length - 1] != '?')
+
+              url += '&';
+
+            url += key + '=' + encodeURIComponent(data[key]);
+
+          }
+
+          img.src = url;
+
+        };
+
+    })(302299);
+
+</script>
+
+<style type="text/css">
+
+/* 竖版样式 */
+
+.lay_top.hide {
+
+  display: none;
+
+}
+
+#combine_page.vertical {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+
+#combine_page.vertical .page_login {
+
+  width: 360px;
+
+}
+
+
+
+#combine_page.vertical .lay_login_form {
+
+  position: relative;
+
+  margin: 0px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+
+
+#combine_page.vertical .lay_login_form::after {
+
+    content: '';
+
+    height: 1px;
+
+    background-color: rgba(0, 0, 0, 0.04);
+
+    width: 250px;
+
+    position: absolute;
+
+    bottom: 0px;
+
+    left: 50%;
+
+    margin-left: -125px;
+
+}
+
+
+
+#combine_page.vertical .page_accredit {
+
+    margin-top: 0px;
+
+    border-left: none;
+
+    height: auto;
+
+}
+
+
+
+#combine_page.vertical .page_accredit .lay_main {
+
+    margin-left: 0px;
+
+}
+
+#combine_page.vertical .page_accredit .lay_main .lay_accredit_con {
+
+    margin-top: 0px;
+
+}
+
+
+
+#combine_page.vertical .accredit_info {
+
+  margin-top: 10px;
+
+}
+
+#combine_page.vertical .accredit_info .accredit_info_op li {
+
+  margin-bottom: 10px;
+
+}
+
+</style>
+
+<!-- @fragment_top End -->
+
+
+
+</head>
+
+<body>
+
+<!-- @header Start-->
+
+<div class="lay_top" id="lay_top">
+
+    <div class="lay_top_inner">
+
+        <h1 class="logo text_hide">QQ登录</h1>
+
+        <div class="lat_top_other">
+
+            <a href="https://connect.qq.com" target="_blank" title="什么是QQ登录"><i class="icon_help_white"></i>QQ登录</a>
+
+            <span class="line">|</span>
+
+            <a href="https://connect.qq.com/toc/auth_manager?from=auth" id="auth_manager_link" target="_blank" title="登录授权管理">授权管理</a>
+
+            <span class="line">|</span>
+
+            <a href="https://connect.qq.com/manage" target="_blank" title="申请接入">申请接入</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- @header End -->
+
+
+
+<div id="combine_page">
+
+  <div class="page_login combine_page_children float_left border_right">
+
+    <div class="lay_login_form">
+
+      
+
+      <iframe frameborder="0" width="407" height="331" id="ptlogin_iframe" name="ptlogin_iframe" src=""></iframe>
+
+      
+
+    </div>
+
+  </div>
+
+  <div class="page_accredit combine_page_children float_left border_left">
+
+    <div class="lay_main" id="lay_main">
+
+      <div class="lay_accredit_con">
+
+        <p class="cnt_wording"></p>
+
+        <div class="accredit_info" id="accredit_info">
+
+          <ul class="accredit_info_op">
+
+            <li class="select_all_li">
+
+              <input type="checkbox" id="select_all" class="checkbox oauth_checkbox_all" hidefocus="true" checked="checked">
+
+              <label class="oauth_item_title" for="select_all">全选 <p style="margin-left: 8px; display: inline-block;" class="app_site_wording"><a class="accredit_site" id="accredit_site_link" href="https://asn.qq.com" target="_blank">asn.qq.com</a>将获取以下权限：</p>
+
+              </label>
+
+            </li>
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+
+            <li>
+
+              <input name="api_choose" hidefocus="true" type="checkbox" class="checkbox oauth_checkbox" id="item_1010" value="1010" title="默认授权 不可更改" c
