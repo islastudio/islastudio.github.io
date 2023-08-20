@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QQ登录</title>
+  <style>
+  
+  body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.avatar {
+  margin-bottom: 20px;
+}
+
+.avatar img {
+  max-width: 10%;
+  height: auto;
+}
+
+.input-wrapper {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #f7f7f7;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #bbb;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.input-wrapper input:focus+.placeholder,
+.input-wrapper input:valid+.placeholder {
+  transform: translateY(-130%);
+  font-size: 14px;
+  color: #777;
+}
+
+.agreement-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.agreement-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-button {
+  width: 120px;
+  height: 40px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+.login-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.options {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.option-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.option-separator {
+  margin: 0 5px;
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+  <div class="avatar">
+    <img src="https://upload.shejihz.com/2019/04/25704c14def5257a157f2d0f4b7ae581.jpg" alt="Avatar">
+  </div>
+  <form>
+    <div class="form-group">
+    <div class="input-wrapper">
+      <input type="text" id="username" name="username" placeholder="QQ号/手机号/邮箱" required>
+    </div>
+    </div>
+    <div class="form-group">
+    <div class="input-wrapper">
+      <input type="password" id="password" name="password" placeholder="请输入密码" required>
+    </div>
+    </div>
+    <div class="form-group center">
+    <label for="agree" class="agreement-label">
+      <input type="checkbox" id="agree" name="agree" required>
+      <span class="option-text">已阅读并同意
+      <a href="https://qq.com" class="agreement-link">服务协议</a>和
+      <a href="https://qq.com" class="agreement-link">QQ隐私保护指引</a>
+      </span>
+    </label>
+    </div>
+    <div class="form-group center">
+    <button type="submit" class="login-button">
+      登录
+    </button>
+    </div>
+  </form>
+  <div class="options">
+  
+    <a href="https://accounts.qq.com/psw/find?source_id=3263&account" class="option-link">找回密码</a>
+    <span class="option-separator">|</span>
+    <a href="https://zc.qq.com/phone/index.html" class="option-link">新用户注册</a>
+  </div>
+  </div>
+</body>
+
+</html>
