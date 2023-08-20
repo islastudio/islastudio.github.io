@@ -1,8 +1,8 @@
 ## <font size=15>欢迎访问La工作室官方网站</font>
 
 * 工作室创建1周年
-* 中考加油
 
+本工作室在2022年5月20日创建
 本工作室官网在2022年7月30正式公布，感谢支持 栓Q歪锐马去
 
 [反馈](https://docs.qq.com/form/page/DSEZJY0ViV3lhbGZu)
