@@ -51,6 +51,8 @@ ps:密码全为la666
 
 [la高级计算器](https://liuaozhengshuai.lanzoul.com/ilaMj07t2ked)
 
+[电脑文件复制器](http://islastudio.github.io/ZiZhiRuanJian/WengJianCaZhaoGongJu.html)
+
 ## 工作区域
 [linux软件包](https://islastudio.github.io/Kali/RuanJianBao.html)
 
