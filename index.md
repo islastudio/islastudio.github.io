@@ -1,4 +1,3 @@
-<link rel="icon" type="image/x-icon" href="la-logo.ico">
 
 ## <font size=15>欢迎访问La工作室官方网站</font>
 
