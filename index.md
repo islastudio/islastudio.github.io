@@ -11,6 +11,8 @@
 
 ## 最新消息
 
+10.1:百鸡音盒即将上线，敬请期待！
+
 2023.9.9:映像劫持工具正式上线，下滑查看下载
 
 [历史消息](http://islastudio.github.io/LiShiXiaoXi.html)
