@@ -63,6 +63,8 @@ ps:密码全为la666
 
 [映像劫持工具](http://islastudio.github.io/ZiZhiRuanJian/YinXiangJeChiGongJu.html)
 
+[鸡音盒pe版](islastudio.github.io/ZiZhiRuanJian/JiYinHe.html)
+
 ## 工作区域
 [linux软件包](https://islastudio.github.io/Kali/RuanJianBao.html)
 
