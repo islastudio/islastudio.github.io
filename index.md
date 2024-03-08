@@ -47,7 +47,6 @@ ps:密码全为la666
 
 [福洲语言翻译器](FuZhoYuYanFanYiQi/fuzhoyuyanfanyiqi.html)
 
-[啊佬传奇](ALaoChuanQi/alaochuanqi.html)
 
 [高级网址ikun网址](GaoJiWangZhi/gaojiwangzhimimashurujiemian.html)
 
