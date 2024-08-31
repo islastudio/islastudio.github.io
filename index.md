@@ -42,7 +42,7 @@
 ## 工作室壮举
 ps:密码全为la666
 
-[闪避知音](https://flowus.cn/share/d29f0af9-df67-4d02-8e1d-2511857dc6ab?code=YQVMUD)
+[闪避知音](http://islastudio.github.io/ZiZhiYouXi/Jpro.html)
 
 [福洲语言翻译器](FuZhoYuYanFanYiQi/fuzhoyuyanfanyiqi.html)
 
