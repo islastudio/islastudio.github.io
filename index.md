@@ -1,8 +1,7 @@
 
 ## <font size=15>欢迎访问La工作室官方网站</font>
 
-* 中秋快乐
-* 国庆快乐
+*闪避知音发布，欢迎下载
 
 本工作室在2022年5月20日创建
 本工作室官网在2022年7月30正式公布，感谢支持 栓Q歪锐马去
@@ -10,9 +9,7 @@
 
 ## 最新消息
 
-10.1:百鸡音盒即将上线，敬请期待！
-
-2023.9.9:映像劫持工具正式上线，下滑查看下载
+2024.8.31 闪避知音发布
 
 [历史消息](http://islastudio.github.io/LiShiXiaoXi.html)
 
@@ -44,6 +41,8 @@
 
 ## 工作室壮举
 ps:密码全为la666
+
+[闪避知音](https://flowus.cn/share/d29f0af9-df67-4d02-8e1d-2511857dc6ab?code=YQVMUD)
 
 [福洲语言翻译器](FuZhoYuYanFanYiQi/fuzhoyuyanfanyiqi.html)
 
