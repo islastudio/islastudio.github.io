@@ -1,14 +1,14 @@
 
 ## <font size=15>欢迎访问La工作室官方网站</font>
 
-*闪避知音发布，欢迎下载
+*双假快乐
 
 本工作室在2022年5月20日创建
 本工作室官网在2022年7月30正式公布，感谢支持 栓Q歪锐马去
 [反馈](https://docs.qq.com/form/page/DSEZJY0ViV3lhbGZu)
 
 ## 最新消息
-
+2024.9.01闪避知音发布，欢迎下载
 2024.8.31 闪避知音发布
 
 [历史消息](http://islastudio.github.io/LiShiXiaoXi.html)
