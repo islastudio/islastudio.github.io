@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>高考必胜</title>
-    <a href="https://islastudio.github.io">liuao工作室提供支持</a>
+    <a href="https://islastudio.github.io">la工作室</a>
     <style>
         * {
             margin: 0;
@@ -158,55 +158,159 @@
         .video-wrap {
             width: 100%;
             position: relative;
-            padding-bottom: 177.78%; /* 9:16 竖屏比例 */
+            padding-bottom: 177.78%;
             height: 0;
             overflow: hidden;
             background-color: #111;
         }
-        .video-wrap iframe {
+        .video-wrap video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            border: none;
+            object-fit: contain;
+            display: block;
         }
-        .video-fallback {
-            position: absolute;
-            top: 0;
-            left: 0;
+
+        /* ========== 线路链接样式 ========== */
+        .line-wrap {
             width: 100%;
-            height: 100%;
             display: flex;
-            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 0;
+            background-color: #000;
+        }
+        .line-link {
+            flex: 1;
+            display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #1a1a1a;
-            color: #fff;
+            padding: 12px 4px;
+            font-size: 22px;
             text-decoration: none;
-            z-index: 2;
-        }
-        .video-fallback .play-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            margin-bottom: 16px;
-            border: 3px solid #fff;
-        }
-        .video-fallback .fallback-text {
-            font-size: 20px;
             color: #fff;
+            background-color: #1040d0;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            min-width: 0;
+            overflow: hidden;
         }
-        .video-fallback .fallback-sub {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.6);
-            margin-top: 8px;
+        .line-link:hover {
+            background-color: #1a5af0;
+            color: #fff030;
+        }
+        .line-link:nth-child(2) {
+            background-color: #188030;
+        }
+        .line-link:nth-child(2):hover {
+            background-color: #20a040;
+        }
+        .line-link:nth-child(3) {
+            background-color: #8020a0;
+        }
+        .line-link:nth-child(3):hover {
+            background-color: #a030c0;
+        }
+
+        /* ========== 三行独立闪烁文字（已缩小） ========== */
+        .flash-text {
+            width: 100%;
+            text-align: center;
+            padding: 6px 0;
+            font-size: 22px;
+        }
+
+        /* 高考加油：热血红金系，0.4秒极速 */
+        .flash-1 {
+            animation: flash1 0.4s linear infinite;
+        }
+        @keyframes flash1 {
+            0%   { background-color: #e02020; color: #ffd700; }
+            25%  { background-color: #ff4444; color: #fff; }
+            50%  { background-color: #991010; color: #fff030; }
+            75%  { background-color: #ff6600; color: #fff; }
+            100% { background-color: #e02020; color: #ffd700; }
+        }
+
+        /* 高考必胜：蓝紫科技系，0.6秒快速 */
+        .flash-2 {
+            animation: flash2 0.6s linear infinite;
+        }
+        @keyframes flash2 {
+            0%   { background-color: #1040d0; color: #a0e8ff; }
+            20%  { background-color: #8020a0; color: #ffd700; }
+            40%  { background-color: #188030; color: #fff; }
+            60%  { background-color: #1040d0; color: #fff030; }
+            80%  { background-color: #8020a0; color: #a0e8ff; }
+            100% { background-color: #1040d0; color: #a0e8ff; }
+        }
+
+        /* 高考定赢：彩虹炫彩系，0.3秒超极速 */
+        .flash-3 {
+            animation: flash3 0.3s linear infinite;
+        }
+        @keyframes flash3 {
+            0%   { background-color: #e02020; color: #fff; }
+            16%  { background-color: #ff8000; color: #000; }
+            33%  { background-color: #fff030; color: #e02020; }
+            50%  { background-color: #188030; color: #fff030; }
+            66%  { background-color: #1040d0; color: #fff; }
+            83%  { background-color: #8020a0; color: #ffd700; }
+            100% { background-color: #e02020; color: #fff; }
+        }
+
+        /* ========== 漂浮悬浮窗样式 ========== */
+        .float-window {
+            position: fixed;
+            width: 70px;
+            height: 70px;
+            z-index: 9999;
+            cursor: pointer;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            transition: transform 0.1s linear;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        .float-window img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            pointer-events: none;
+        }
+        .float-window .click-hint {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            font-size: 10px;
+            text-align: center;
+            padding: 2px 0;
             font-weight: 400;
+        }
+        .float-window.clicked-once {
+            animation: shake 0.3s ease;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+        }
+        .float-window.vanish {
+            animation: vanishAnim 0.5s ease forwards;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px) rotate(-2deg); }
+            75% { transform: translateX(5px) rotate(2deg); }
+        }
+        @keyframes vanishAnim {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.5; }
+            100% { transform: scale(0); opacity: 0; }
         }
 
         /* 背景色块 */
@@ -342,25 +446,28 @@
     <img src="tp2.jpg" alt="闪烁配图">
 </a>
 
-<!-- ========== 新增：抖音视频区域 ========== -->
+<!-- ========== 固定视频区域 ========== -->
 <div class="video-section">
     <div class="video-title">🔥 三角函数超级解法讲解中</div>
     <div class="video-wrap">
-        <iframe 
-            src="https://open.douyin.com/player/video?vid=7559479911062605102&autoplay=0" 
-            frameborder="0" 
-            scrolling="no" 
-            allowfullscreen
-            referrerpolicy="unsafe-url">
-        </iframe>
-        <!-- 备用方案：如果iframe无法加载，显示点击跳转 -->
-        <a href="https://www.iesdouyin.com/share/video/7559479911062605102/" target="_blank" class="video-fallback" id="videoFallback" style="display:none;">
-            <div class="play-icon">▶</div>
-            <div class="fallback-text">点击观看：三角函数超级解法</div>
-            <div class="fallback-sub">跳转至抖音APP/网页播放</div>
-        </a>
+        <video controls autoplay muted loop playsinline>
+            <source src="https://vdse.bdstatic.com//192d9a98d782d9c74c96f09db9378d93.mp4" type="video/mp4">
+            您的浏览器不支持视频播放
+        </video>
     </div>
 </div>
+
+<!-- ========== 线路链接 ========== -->
+<div class="line-wrap">
+    <a href="https://vdse.bdstatic.com//192d9a98d782d9c74c96f09db9378d93.mp4" class="line-link" target="_blank">线路1</a>
+    <a href="https://vdse.bdstatic.com//192d9a98d782d9c74c96f09db9378d93.mp4" class="line-link" target="_blank">线路2</a>
+    <a href="https://vdse.bdstatic.com//192d9a98d782d9c74c96f09db9378d93.mp4" class="line-link" target="_blank">线路3</a>
+</div>
+
+<!-- ========== 三行独立快速闪烁文字（已缩小） ========== -->
+<div class="flash-text flash-1">高考加油</div>
+<div class="flash-text flash-2">高考必胜</div>
+<div class="flash-text flash-3">高考定赢</div>
 
 <!-- 底部内容 -->
 <div class="row">
@@ -436,21 +543,77 @@
     <div class="block bg-black fs-40 text-gold">未来可期</div>
 </div>
 
+<!-- ========== 漂浮悬浮窗 ========== -->
+<div class="float-window" id="floatWindow">
+    <img src="tp3.jpg" alt="悬浮窗">
+    <div class="click-hint">再点一下关闭</div>
+</div>
+
 <script>
-    // 检测iframe是否加载失败，显示备用跳转按钮
-    setTimeout(function() {
-        var iframe = document.querySelector('.video-wrap iframe');
-        var fallback = document.getElementById('videoFallback');
-        try {
-            var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-            if (!iframeDoc || iframeDoc.body.innerHTML === '') {
-                fallback.style.display = 'flex';
+    // ========== 漂浮悬浮窗逻辑 ==========
+    (function() {
+        var floatWin = document.getElementById('floatWindow');
+        var clickCount = 0;
+        var size = 70;
+        var posX = Math.random() * (window.innerWidth - size);
+        var posY = Math.random() * (window.innerHeight - size);
+        var speedX = 2 + Math.random() * 2;
+        var speedY = 2 + Math.random() * 2;
+        var animId;
+
+        function move() {
+            posX += speedX;
+            posY += speedY;
+
+            if (posX <= 0) {
+                posX = 0;
+                speedX = Math.abs(speedX);
+            } else if (posX >= window.innerWidth - size) {
+                posX = window.innerWidth - size;
+                speedX = -Math.abs(speedX);
             }
-        } catch(e) {
-            // 跨域情况下会报错，此时也显示备用方案
-            fallback.style.display = 'flex';
+
+            if (posY <= 0) {
+                posY = 0;
+                speedY = Math.abs(speedY);
+            } else if (posY >= window.innerHeight - size) {
+                posY = window.innerHeight - size;
+                speedY = -Math.abs(speedY);
+            }
+
+            floatWin.style.left = posX + 'px';
+            floatWin.style.top = posY + 'px';
+            animId = requestAnimationFrame(move);
         }
-    }, 3000);
+
+        floatWin.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            clickCount++;
+
+            if (clickCount === 1) {
+                floatWin.classList.add('clicked-once');
+                var hint = floatWin.querySelector('.click-hint');
+                if (hint) hint.textContent = '再点一次关闭!';
+                setTimeout(function() {
+                    floatWin.classList.remove('clicked-once');
+                }, 300);
+            } else if (clickCount >= 2) {
+                floatWin.classList.add('vanish');
+                cancelAnimationFrame(animId);
+                setTimeout(function() {
+                    floatWin.style.display = 'none';
+                }, 500);
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            if (posX > window.innerWidth - size) posX = window.innerWidth - size;
+            if (posY > window.innerHeight - size) posY = window.innerHeight - size;
+        });
+
+        move();
+    })();
 </script>
 
 </body>
