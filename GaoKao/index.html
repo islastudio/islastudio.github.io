@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高考必胜</title>
+    <a href="https://islastudio.github.io">liuao工作室提供支持</a>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "黑体", sans-serif;
+            font-weight: 900;
+        }
+        body {
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            padding: 0;
+            gap: 0;
+            width: 100vw;
+            overflow-x: hidden;
+        }
+        .row {
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 0;
+        }
+        .block {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4px 2px;
+            border-radius: 0;
+            white-space: nowrap;
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+        }
+
+        /* 5*4 链接区域 */
+        .link-wrap {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            margin: 0;
+        }
+        .link-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px 2px;
+            font-size: 22px;
+            text-decoration: none;
+            transition: color 0.2s;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .link-item:hover {
+            color: #fff;
+        }
+
+        /* ========== 图片行样式 ========== */
+        .img-row {
+            display: block;
+            width: 100%;
+            line-height: 0;
+            text-decoration: none;
+        }
+        .img-row img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        /* ========== 闪烁图片样式 ========== */
+        .img-blink {
+            display: block;
+            width: 100%;
+            line-height: 0;
+            text-decoration: none;
+            animation: blinkEffect 1.5s ease-in-out infinite;
+        }
+        .img-blink:nth-of-type(7) {
+            animation-delay: 0s;
+        }
+        .img-blink:nth-of-type(8) {
+            animation-delay: 0.75s;
+        }
+        .img-blink img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        @keyframes blinkEffect {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* ========== 搜索框样式 ========== */
+        .search-wrap {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px 16px;
+            background-color: #000;
+        }
+        .search-box {
+            width: 100%;
+            max-width: 600px;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            background-color: transparent;
+            border: 2px solid #fff;
+            border-radius: 30px;
+            outline: none;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .search-box::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 400;
+        }
+        .search-box:focus {
+            border-color: #fff030;
+            box-shadow: 0 0 12px rgba(255, 240, 48, 0.4);
+        }
+
+        /* ========== 视频区域样式 ========== */
+        .video-section {
+            width: 100%;
+            background-color: #000;
+            padding: 0;
+        }
+        .video-title {
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 26px;
+            color: #fff030;
+            background-color: #e02020;
+            text-decoration: none;
+            display: block;
+        }
+        .video-wrap {
+            width: 100%;
+            position: relative;
+            padding-bottom: 177.78%; /* 9:16 竖屏比例 */
+            height: 0;
+            overflow: hidden;
+            background-color: #111;
+        }
+        .video-wrap iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .video-fallback {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #1a1a1a;
+            color: #fff;
+            text-decoration: none;
+            z-index: 2;
+        }
+        .video-fallback .play-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin-bottom: 16px;
+            border: 3px solid #fff;
+        }
+        .video-fallback .fallback-text {
+            font-size: 20px;
+            color: #fff;
+        }
+        .video-fallback .fallback-sub {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 8px;
+            font-weight: 400;
+        }
+
+        /* 背景色块 */
+        .bg-red    { background-color: #e02020; }
+        .bg-deepred{ background-color: #991010; }
+        .bg-black  { background-color: #000; }
+        .bg-yellow { background-color: #fff030; }
+        .bg-lyellow{ background-color: #fff6b0; }
+        .bg-green  { background-color: #188030; }
+        .bg-blue   { background-color: #1040d0; }
+        .bg-lblue  { background-color: #a0e8ff; }
+        .bg-purple { background-color: #8020a0; }
+        .bg-orange { background-color: #ff8000; }
+        .bg-lorange{ background-color: #ffe8b0; }
+        .bg-pink   { background-color: #ffc0d0; }
+
+        /* 文字颜色 */
+        .text-red    { color: #e02020; }
+        .text-black   { color: #000; }
+        .text-blue    { color: #1040d0; }
+        .text-yellow  { color: #fff030; }
+        .text-gold    { color: #ffd700; }
+        .text-white   { color: #fff; }
+        .text-purple  { color: #8020a0; }
+        .text-lblue   { color: #40d0ff; }
+
+        /* 字号 */
+        .fs-40 { font-size: 40px; }
+        .fs-32 { font-size: 32px; }
+        .fs-26 { font-size: 26px; }
+        .fs-22 { font-size: 22px; }
+        .fs-20 { font-size: 20px; }
+    </style>
+</head>
+<body>
+
+<!-- 顶部内容 -->
+<div class="row">
+    <div class="block bg-red fs-40 text-white">高考必胜</div>
+    <div class="block bg-deepred fs-26 text-white">
+        <div>千万高三考生</div>
+        <div class="text-lblue">火热在线PK</div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="block bg-yellow fs-26 text-black">大吉大利</div>
+    <div class="block bg-lyellow fs-26 text-black">考运当头</div>
+    <div class="block bg-green fs-26 text-yellow">人品爆发</div>
+    <div class="block bg-lblue fs-26 text-black">梦想成真</div>
+    <div class="block bg-red fs-26 text-white">金榜题名</div>
+</div>
+
+<div class="row">
+    <div class="block fs-32">
+        <span class="text-red">大吉大利</span>
+        <span class="text-white">考运当头</span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="block bg-black fs-26 text-yellow">猜题必中</div>
+    <div class="block bg-lyellow fs-26 text-red">人品爆发</div>
+    <div class="block bg-green fs-26 text-yellow">超常发挥</div>
+    <div class="block bg-red fs-26 text-white">金榜题名</div>
+</div>
+
+<div class="row">
+    <div class="block bg-black fs-40 text-gold">金榜题名</div>
+    <div class="block bg-red fs-40 text-gold">金榜题名</div>
+</div>
+
+<!-- 中间 5行4列 纯文字链接 -->
+<div class="link-wrap">
+    <a href="index.html" class="link-item text-white" title="金榜题名">金榜题名</a>
+    <a href="index.html" class="link-item text-yellow" title="逢考必过">逢考必过</a>
+    <a href="index.html" class="link-item text-lblue" title="超常发挥">超常发挥</a>
+    <a href="index.html" class="link-item text-red" title="旗开得胜">旗开得胜</a>
+
+    <a href="index.html" class="link-item text-purple" title="前程似锦">前程似锦</a>
+    <a href="index.html" class="link-item text-orange" title="马到成功">马到成功</a>
+    <a href="index.html" class="link-item text-gold" title="下笔有神">下笔有神</a>
+    <a href="index.html" class="link-item text-blue" title="思路清晰">思路清晰</a>
+
+    <a href="index.html" class="link-item text-gold" title="蒙的全对">蒙的全对</a>
+    <a href="index.html" class="link-item text-red" title="会的全对">会的全对</a>
+    <a href="index.html" class="link-item text-orange" title="分数暴涨">分数暴涨</a>
+    <a href="index.html" class="link-item text-pink" title="考运亨通">考运亨通</a>
+
+    <a href="index.html" class="link-item text-yellow" title="考神附体">考神附体</a>
+    <a href="index.html" class="link-item text-white" title="沉着冷静">沉着冷静</a>
+    <a href="index.html" class="link-item text-blue" title="独占鳌头">独占鳌头</a>
+    <a href="index.html" class="link-item text-purple" title="圆梦今夏">圆梦今夏</a>
+
+    <a href="index.html" class="link-item text-orange" title="不负韶华">不负韶华</a>
+    <a href="index.html" class="link-item text-white" title="未来可期">未来可期</a>
+    <a href="index.html" class="link-item text-red" title="越战越勇">越战越勇</a>
+    <a href="index.html" class="link-item text-yellow" title="笑傲考场">笑傲考场</a>
+</div>
+
+<!-- ========== 百度搜索框 ========== -->
+<div class="search-wrap">
+    <input 
+        type="text" 
+        class="search-box" 
+        placeholder="搜你想要的题目"
+        onkeydown="if(event.key==='Enter'){window.open('https://www.baidu.com/s?wd='+encodeURIComponent(this.value),'_blank');this.value='';}"
+    >
+</div>
+
+<!-- ========== 图片区域：5个tp1 + 2个闪烁的tp2 ========== -->
+<a href="index.html" class="img-row">
+    <img src="tp1.jpg" alt="配图">
+</a>
+<a href="index.html" class="img-row">
+    <img src="tp1.jpg" alt="配图">
+</a>
+<a href="index.html" class="img-row">
+    <img src="tp1.jpg" alt="配图">
+</a>
+<a href="index.html" class="img-row">
+    <img src="tp1.jpg" alt="配图">
+</a>
+<a href="index.html" class="img-row">
+    <img src="tp1.jpg" alt="配图">
+</a>
+
+<!-- 两个闪烁的tp2，间接性交替闪烁 -->
+<a href="index.html" class="img-blink">
+    <img src="tp2.jpg" alt="闪烁配图">
+</a>
+<a href="index.html" class="img-blink">
+    <img src="tp2.jpg" alt="闪烁配图">
+</a>
+
+<!-- ========== 新增：抖音视频区域 ========== -->
+<div class="video-section">
+    <div class="video-title">🔥 三角函数超级解法讲解中</div>
+    <div class="video-wrap">
+        <iframe 
+            src="https://open.douyin.com/player/video?vid=7559479911062605102&autoplay=0" 
+            frameborder="0" 
+            scrolling="no" 
+            allowfullscreen
+            referrerpolicy="unsafe-url">
+        </iframe>
+        <!-- 备用方案：如果iframe无法加载，显示点击跳转 -->
+        <a href="https://www.iesdouyin.com/share/video/7559479911062605102/" target="_blank" class="video-fallback" id="videoFallback" style="display:none;">
+            <div class="play-icon">▶</div>
+            <div class="fallback-text">点击观看：三角函数超级解法</div>
+            <div class="fallback-sub">跳转至抖音APP/网页播放</div>
+        </a>
+    </div>
+</div>
+
+<!-- 底部内容 -->
+<div class="row">
+    <div class="block fs-32">
+        <span class="text-red">天王盖地虎全考</span>
+        <span class="text-blue">985</span>
+        <span class="text-white">宝塔镇河妖全上</span>
+        <span class="text-purple">211</span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="block bg-black fs-26 text-yellow">猜题必中</div>
+    <div class="block bg-pink fs-26 text-black">不信科</div>
+    <div class="block bg-lorange fs-26 text-black">大内存题库</div>
+    <div class="block bg-red fs-26 text-white">思路流畅不卡题</div>
+</div>
+
+<div class="row">
+    <div class="block bg-black fs-40 text-gold">考神附体</div>
+    <div class="block fs-40">
+        <span class="text-blue">包你</span>
+        <span class="text-red">超常发挥</span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="block bg-red fs-26 text-yellow">好运锦鲤</div>
+    <div class="block bg-green fs-32 text-white">
+        <span>制霸考场</span>
+        <span class="text-yellow">沉着应对</span>
+        <span>相信自己</span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="block bg-red fs-26 text-yellow">好运锦鲤</div>
+    <div class="block bg-blue fs-26 text-white">佳霸考场</div>
+    <div class="block bg-yellow fs-26 text-black">沉着应对</div>
+    <div class="block bg-deepred fs-26 text-gold">相信自己</div>
+</div>
+
+<div class="row">
+    <div class="block bg-red fs-26 text-yellow">好运锦鲤</div>
+    <div class="block bg-black fs-40 text-gold">好运锦鲤</div>
+</div>
+
+<div class="row">
+    <div class="block bg-lyellow fs-26 text-red">佳绩传九州</div>
+    <div class="block bg-lorange fs-26 text-red">心态稳如泰山</div>
+    <div class="block bg-deepred fs-26 text-gold">成绩一飞冲天</div>
+</div>
+
+<div class="row">
+    <div class="block bg-blue fs-26 text-white">下笔如有神</div>
+    <div class="block bg-yellow fs-26 text-black">做题不犹豫</div>
+    <div class="block bg-green fs-26 text-yellow">难题都有解</div>
+</div>
+
+<div class="row">
+    <div class="block bg-black fs-32 text-gold">蒙的全对</div>
+    <div class="block bg-red fs-32 text-white">会的全对</div>
+</div>
+
+<div class="row">
+    <div class="block bg-purple fs-26 text-white">旗开得胜</div>
+    <div class="block bg-orange fs-26 text-white">马到成功</div>
+    <div class="block bg-lblue fs-26 text-black">前程似锦</div>
+</div>
+
+<div class="row">
+    <div class="block bg-red fs-40 text-gold">高考加油</div>
+    <div class="block bg-black fs-40 text-gold">未来可期</div>
+</div>
+
+<script>
+    // 检测iframe是否加载失败，显示备用跳转按钮
+    setTimeout(function() {
+        var iframe = document.querySelector('.video-wrap iframe');
+        var fallback = document.getElementById('videoFallback');
+        try {
+            var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            if (!iframeDoc || iframeDoc.body.innerHTML === '') {
+                fallback.style.display = 'flex';
+            }
+        } catch(e) {
+            // 跨域情况下会报错，此时也显示备用方案
+            fallback.style.display = 'flex';
+        }
+    }, 3000);
+</script>
+
+</body>
+</html>
