@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Homepage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background-color: #ffffff;
+            padding: 24px;
+            color: #222;
+            font-size: 14px;
+            min-width: 1200px;
+        }
+        /* 顶部导航栏 */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        .nav-left {
+            font-size: 13px;
+            color: #666;
+        }
+        .nav-middle {
+            display: flex;
+            gap: 48px;
+        }
+        .nav-middle span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: #444;
+        }
+        .nav-right {
+            display: flex;
+            gap: 12px;
+        }
+        .btn-print {
+            border: 1px solid #ddd;
+            background: #fff;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        .btn-download {
+            background: #111;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        /* 个人头部信息栏 */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 8px;
+            background: #eee;
+            overflow: hidden;
+        }
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .profile-info-row {
+            display: flex;
+            gap: 32px;
+        }
+        .info-item {
+            text-align: center;
+        }
+        .info-label {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 4px;
+        }
+        .info-value {
+            font-size: 13px;
+        }
+        .intro-btn {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid #ddd;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+        /* 双栏内容区：今日热搜 + 评论区 */
+        .two-col-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+        .card {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 16px;
+        }
+        .card-title {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        /* 今日热搜列表 */
+        .hot-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 13px;
+        }
+        .hot-time {
+            color: #888;
+        }
+        .hot-bottom-tag {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+            font-size: 12px;
+            color: #777;
+        }
+        /* 评论区列表 */
+        .comment-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        .comment-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            background: #eee;
+        }
+        .comment-content .user-name {
+            font-size: 13px;
+            margin-bottom: 3px;
+        }
+        .comment-content .text {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 3px;
+        }
+        .comment-content .meta {
+            font-size: 10px;
+            color: #aaa;
+        }
+        /* 关于我卡片 */
+        .about-card {
+            margin-bottom: 24px;
+        }
+        .about-title {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 14px;
+            font-size: 13px;
+        }
+        .about-list {
+            line-height: 1.7;
+            font-size: 13px;
+            color: #333;
+        }
+        .about-list li {
+            margin: 4px 0;
+        }
+        .about-bottom-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            margin-top: 12px;
+        }
+        /* 禁忌雷点卡片 */
+        .taboo-card {
+            margin-bottom: 24px;
+        }
+        .taboo-title {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 14px;
+            font-size: 13px;
+        }
+        .taboo-list {
+            line-height: 1.7;
+            font-size: 13px;
+            color: #333;
+        }
+        .taboo-list li {
+            margin: 4px 0;
+        }
+        /* 底部标签、二维码、文案区域 */
+        .bottom-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .tag-group {
+            display: flex;
+            gap: 10px;
+        }
+        .tag {
+            background: #222;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        .qr-box {
+            text-align: right;
+        }
+        .qr-desc {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 6px;
+        }
+        .qr-code {
+            width: 100px;
+            height: 100px;
+            background: #eee;
+        }
+        .footer-text {
+            margin-top: 16px;
+            font-style: italic;
+            color: #444;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <div class="top-nav">
+        <div class="nav-left">My Homepage</div>
+        <div class="nav-middle">
+            <span>📞 My Attributes</span>
+            <span>✉ QQ</span>
+        </div>
+        <div class="nav-right">
+            <button class="btn-print">Print</button>
+            <button class="btn-download">Download Report</button>
+        </div>
+    </div>
+
+    <!-- 头部个人信息 -->
+    <div class="profile-header">
+        <div class="avatar">
+            <img src="tp1.jpg" alt="头像">
+        </div>
+        <div class="profile-info-row">
+            <div class="info-item">
+                <div class="info-label">About Me</div>
+                <div class="info-value">16 天秤座 INFJ</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Nickname</div>
+                <div class="info-value">小熙</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Wechat</div>
+                <div class="info-value">wxid_wiwz3ld0ilut22</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">location</div>
+                <div class="info-value">山东</div>
+            </div>
+        </div>
+        <div class="intro-btn">
+            <span>◼</span> Introduction
+        </div>
+    </div>
+
+    <!-- 双栏：今日热搜 + 评论区 -->
+    <div class="two-col-wrap">
+        <!-- 今日热搜 -->
+        <div class="card">
+            <div class="card-title">
+                <span>Q</span> 今日热搜
+            </div>
+            <ul class="hot-list">
+                <li>
+                    <span>NO.1 小熙与阿帽是真爱祝99</span>
+                    <span class="hot-time">12:49PM</span>
+                </li>
+                <li>
+                    <span>NO.2 我推什么时候复刻米哈游</span>
+                    <span class="hot-time">12:51PM</span>
+                </li>
+                <li>
+                    <span>NO.3 不要骂我推 散黑退退退</span>
+                    <span class="hot-time">12:52PM</span>
+                </li>
+                <li>
+                    <span>NO.4 我看原神未必有它做的剧情牛逼</span>
+                    <span class="hot-time">12:53PM</span>
+                </li>
+                <li>
+                    <span>NO.5 我和我推昨天晚上见面了在须弥城</span>
+                    <span class="hot-time">12:54PM</span>
+                </li>
+                <li>
+                    <span>NO.6 阿帽我想你了</span>
+                    <span class="hot-time">12:55PM</span>
+                </li>
+                <li>
+                    <span>NO.7 不求卡池双金三金教程</span>
+                    <span class="hot-time">12:57PM</span>
+                </li>
+                <li>
+                    <span>NO.8 为了原神我天天熬夜穿越到提瓦特</span>
+                    <span class="hot-time">12:57PM</span>
+                </li>
+                <li>
+                    <span>NO.9 幸福的梦被一句话打破我们不是一个次元的</span>
+                    <span class="hot-time">12:58PM</span>
+                </li>
+                <li>
+                    <span>NO.10 幸福与痛苦是这个交织的梦 我爱你阿帽</span>
+                    <span class="hot-time">12:59PM</span>
+                </li>
+            </ul>
+            <div class="hot-bottom-tag">
+                <span># tags</span>
+                <span>↓ navigate</span>
+                <span>▢ open</span>
+                <span>esc close</span>
+                <span>← parent</span>
+            </div>
+        </div>
+
+        <!-- 评论区 -->
+        <div class="card">
+            <div class="card-title">评论区</div>
+            <div class="comment-item">
+                <div class="comment-avatar"><img src="tp2.jpg" alt="头像"></div>
+                <div class="comment-content">
+                    <div class="user-name">@大佬</div>
+                    <div class="text">最喜欢纳西妲了</div>
+                    <div class="meta">第1楼 10-27 10:27 来自江西</div>
+                </div>
+            </div>
+            <div class="comment-item">
+                <div class="comment-avatar"><img src="tp3.jpg" alt="头像"></div>
+                <div class="comment-content">
+                    <div class="user-name">@小薛</div>
+                    <div class="text">卢卡天天开心！</div>
+                    <div class="meta">第2楼 7-10 07:10 来自江苏</div>
+                </div>
+            </div>
+            <div class="comment-item">
+                <div class="comment-avatar"><img src="tp4.jpg" alt="头像"></div>
+                <div class="comment-content">
+                    <div class="user-name">@阿惜</div>
+                    <div class="text">天天开心快快乐乐</div>
+                    <div class="meta">第3楼 1-3 01:30 来自湖南</div>
+                </div>
+            </div>
+            <div class="comment-item">
+                <div class="comment-avatar"><img src="tp5.jpg" alt="头像"></div>
+                <div class="comment-content">
+                    <div class="user-name">@小寒</div>
+                    <div class="text">喜欢百合香的和我交友！！</div>
+                    <div class="meta">第4楼 1-3 01:30 来自广东</div>
+                </div>
+            </div>
+            <div class="comment-item">
+                <div class="comment-avatar"><img src="tp6.jpg" alt="头像"></div>
+                <div class="comment-content">
+                    <div class="user-name">@曦月</div>
+                    <div class="text">愿你开心，今天，明天，每一天！</div>
+                    <div class="meta">第5楼 1-3 01:30 来自广东</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 关于我 卡片 -->
+    <div class="card about-card">
+        <div class="about-title">
+            <span>1 new message</span> 关于我
+        </div>
+        <ul class="about-list">
+            <li>• 主推：流浪者 副推：魈 好感：杜林 哥伦比亚 仆人</li>
+            <li>• 个人性格很好一般不会和人发生争执除非真的是无可饶恕的事情</li>
+            <li>• 比较喜欢奶黄淡黄 黑白 血红酒红这些颜色</li>
+            <li>• 喜欢玩原神 有时候偶尔打王者（但不多）</li>
+            <li>• 有时候会喜欢修图（王者的）或者和别人聊聊天</li>
+            <li>• 看过一些小说双男主的（比如水千丞老师的小说作品）</li>
+            <li>• 非常喜欢和人一起玩游戏（和熟人 陌生人不是很敢）</li>
+            <li>• 喜欢冬天 因为冬天雪比较好玩</li>
+            <li>• 喜欢向日葵因为感觉寓意比较好 而且感觉很阳光</li>
+            <li>• 陌生人回消息不回很及时 正常情况一般是秒回（除非有事）</li>
+            <li>• 是一个拧巴的人有时候不会擅长表达热恋之后会比较抽象</li>
+            <li>• 喜欢睡觉 感到会心情舒畅 烦恼不开心都消失</li>
+            <li>• 也很喜欢交友 但是深交和亲友就算了 普通朋友可以聊</li>
+            <li>• 很喜欢吃薯片 最喜欢黄瓜和青柠味 非常好吃</li>
+        </ul>
+        <img class="about-bottom-avatar" src="tp1.jpg" alt="小头像">
+    </div>
+
+    <!-- 禁忌雷点 卡片 -->
+    <div class="card taboo-card">
+        <div class="taboo-title">
+            <span>♥</span> 禁忌雷点
+        </div>
+        <ul class="taboo-list">
+            <li>• 雷多托雷 假如和我交友 你推可以 但不要多次在我面前提起</li>
+            <li>• 雷有关于阿惜的任何CP（只接受水仙）但和我交友的人不要在我面前提就可以</li>
+            <li>• 雷有关于魈的任何CP 假如说可以接受的也就魈空</li>
+            <li>• 不喜欢没事找事的 不喜欢消息轰炸（除非你和我关系好）</li>
+            <li>• 不喜欢没认识多久就给我发语音通话/视频通话</li>
+            <li>• 不要评价我身边的好友 不理解不知道就不要随便评价我好友</li>
+            <li>• 雷我发作品的图片外传 这是侵犯了原画师的图权</li>
+            <li>• 散黑 别不理智谢 毕竟都互不相识别做不要脸的事情</li>
+            <li>• 雷不礼貌的人（除非熟悉或朋友 陌生人这样直接拒不交还是要图）</li>
+            <li>• 讨厌拿角色开玩笑的人 这是一种不礼貌和冒犯角色（个人认为）</li>
+            <li>• 雷说我是梦但不约稿 我不爱约稿图的人其次我以后上学就不经常在家了 没时间</li>
+            <li>• 造谣/开黄/乱/私在不认识的情况下对我指指点点</li>
+            <li>• 微雷在评论区艾特我的（除亲友/家人）也不是特别雷就是微微的</li>
+            <li>• 雷不和我商量就自主主张的把我拉进任何群里</li>
+        </ul>
+    </div>
+
+    <!-- 底部标签+二维码+文案 -->
+    <div class="bottom-wrap">
+        <div class="tag-group">
+            <span class="tag">#散熙99</span>
+            <span class="tag">#交扩私信/扫码</span>
+            <span class="tag">#原神牛逼</span>
+        </div>
+        <div class="qr-box">
+            <div class="qr-desc">@小熙の好友码</div>
+            <div class="qr-code">
+                <!-- 二维码图片 tp7.jpg -->
+                <img src="tp7.jpg" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+        </div>
+    </div>
+    <div class="footer-text">
+        即便我们不在一个次元 但我还是期待梦里的相见
+    </div>
+</body>
+</html>
